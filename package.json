@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "next start",
+    "start": "next start -p $PORT",
     "prod": "NODE_ENV=production next start",
     "dev": "NODE_ENV=development next dev",
     "build": "NODE_ENV=production next build",
     "test": "NODE_ENV=test jest --silent",
     "lint": "prettier --write '**/*.{js,css,html,json,ts,tsx}'",
-    "debug": "NODE_OPTIONS=--inspect next"
+    "debug": "NODE_OPTIONS=--inspect next",
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
