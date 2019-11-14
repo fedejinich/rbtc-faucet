@@ -92,13 +92,13 @@ function App() {
   };
 
   return (
-    <div className="background">
+    <div className="custom-body">
       <Navbar className="navbar-rsk">
         <Navbar.Brand className="navbar-brand-rsk">
           <img className="logo ml-5" />
         </Navbar.Brand>
       </Navbar>
-      <div className="app-body vertical-center">
+      <div className="app-body">
         <Container className="m-0 p-0 w-100 container-rsk">
           <DesktopCards faucetProps={faucetPropsDesktop} />
         </Container>
