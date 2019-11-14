@@ -43,7 +43,7 @@ function App() {
         }
       };
     };
-    
+
     setLoading(true);
     axios
       .post(apiUrl() + '/dispense', {
@@ -111,7 +111,38 @@ interface DynamicCardsProps {
   faucetProps: FaucetProps;
 }
 
+
+
+
+
+
 const DesktopCards = (props: DynamicCardsProps) => {
+  const reactCardCarouselProps = {
+    autoplay: true,
+    autoplay_speed: 5000
+  };
+  const devportalLinkCardProps = {
+    link: 'https://developers.rsk.co/',
+    icon: <img className="devportal-icon" />,
+    title: 'DevPortal',
+    backgroundColor: '#00b41f',
+    description: 'For developers by developers'
+  };
+  const tutorialLinkCardProps = {
+    link: 'https://developers.rsk.co/tutorials/',
+    icon: <img className="tutorials-icon" />,
+    title: 'Tutorials',
+    backgroundColor: '#f26122',
+    description: 'How to develop on RSK'
+  };
+  const walletsLinkCardProps = {
+    link: 'https://developers.rsk.co/develop/apps/wallets/',
+    icon: <img className="wallet-icon" />,
+    title: 'Wallets',
+    backgroundColor: 'black',
+    description: 'Try RSK with these wallets'
+  };
+
   return (
     <Row className="w-100">
       <Col>
@@ -119,33 +150,15 @@ const DesktopCards = (props: DynamicCardsProps) => {
       </Col>
       <Col>
         <Container className="h-100 w-100">
-          <ReactCardCarousel autoplay={true} autoplay_speed={5000}>
+          <ReactCardCarousel {...reactCardCarouselProps}>
             <Row>
-              <RskLinkCard
-                link="https://developers.rsk.co/"
-                icon={<img className="devportal-icon" />}
-                title="DevPortal"
-                backgroundColor="#00b41f"
-                description="For developers by developers"
-              />
+              <RskLinkCard {...devportalLinkCardProps} />
             </Row>
             <Row>
-              <RskLinkCard
-                link="https://developers.rsk.co/develop/apps/wallets/"
-                icon={<img className="wallet-icon" />}
-                title="Wallets"
-                backgroundColor="black"
-                description="Try RSK with these wallets"
-              />
+              <RskLinkCard {...walletsLinkCardProps} />
             </Row>
             <Row>
-              <RskLinkCard
-                link="https://developers.rsk.co/tutorials/"
-                icon={<img className="tutorials-icon" />}
-                title="Tutorials"
-                backgroundColor="#f26122"
-                description="How to develop on RSK"
-              />
+              <RskLinkCard {...tutorialLinkCardProps} />
             </Row>
           </ReactCardCarousel>
         </Container>

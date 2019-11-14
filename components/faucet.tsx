@@ -7,7 +7,7 @@ import Spinner from 'react-bootstrap/Spinner';
 import RskCard from './rsk-card';
 import '../assets/styles/faucet.css';
 
-interface FaucetProps {
+export interface FaucetProps {
   captcha: any;
   loading: boolean;
   dispenseAddress: string;
@@ -58,7 +58,6 @@ const Faucet = (props: FaucetProps) => {
             <Spinner animation="border" role="status" />
           ) : (
             <Button
-              variant="primary"
               onClick={props.onDispenseClick}
               className="faucet-button button-rsk w-100 rounded-rsk"
             >
