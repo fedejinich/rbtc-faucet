@@ -8,6 +8,13 @@
   border: transparent !important;
 }
 
+@media (max-width: 768px) {
+  .button-rsk{
+
+    font-size: xx-small !important;
+  }
+}
+
 .rsk-shadow {
   box-shadow: rgba(0, 0, 0, 0.1) 5px 5px 9px 5px !important;
 }
