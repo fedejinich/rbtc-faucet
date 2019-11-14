@@ -19,7 +19,7 @@ const RSK_TESTNET_CHAIN = 31;
 
 function App() {
   //Hooks
-  const [captcha, setCaptcha] = useState({ id: '', png: '' });
+  const [captcha, setCaptcha] = useState(null);
   const [dispenseAddress, setDispenseAddress] = useState('');
   const [captchaValue, setCaptchaValue] = useState('');
   const [loading, setLoading] = useState(false);
@@ -39,12 +39,12 @@ function App() {
           id: captcha.id
         }
       })
-      .then(res => {
+      .then((res: any) => {
         setLoading(false);
         const data: DispenseResponse = res.data;
         Swal.fire(swalSetup(data));
       })
-      .catch(e => {
+      .catch((e: any) => {
         //codes 409 or 500
         setLoading(false);
         console.error(e);
@@ -63,7 +63,14 @@ function App() {
 
   //Methods
   const fetchCaptcha = async () => {
-    const result = await axios.post(newCaptchaUrl());
+    const result = await axios.post(
+      newCaptchaUrl(),
+      {},
+      {
+        'X-Client-ID': 'rbtc-faucet',
+        'Content-Type': 'application/json'
+      }
+    );
     setCaptcha(result.data);
   };
 
