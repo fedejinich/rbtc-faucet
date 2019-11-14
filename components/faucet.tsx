@@ -20,7 +20,7 @@ export interface FaucetProps {
 const Faucet = (props: FaucetProps) => {
   return (
     <RskCard
-      padding="p-5"
+      padding="p-4"
       icon={<img className="faucet-icon" />}
       title="Faucet"
       backgroundColor="#2c9dc3"
