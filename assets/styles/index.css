@@ -33,6 +33,16 @@ body,
   padding: 30px;
 }
 
+@media (max-width: 768px) {
+  .logo {
+    content: url('./../images/rsk_logo.svg');
+    height: 120px;
+    padding: 30px;
+    padding-left: 25% !important;
+  }
+}
+
+
 .navbar-rsk {
   margin-bottom: 2%;
   width: 100%;
