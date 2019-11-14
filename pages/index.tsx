@@ -65,11 +65,10 @@ function App() {
   const fetchCaptcha = async () => {
     const result = await axios.post(
       newCaptchaUrl(),
-      {},
+      null,
       {
         headers: {
           'X-Client-ID': 'rbtc-faucet',
-          'Content-Type': 'application/json'
         }
       }
     );
