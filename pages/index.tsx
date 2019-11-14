@@ -67,8 +67,10 @@ function App() {
       newCaptchaUrl(),
       {},
       {
-        'X-Client-ID': 'rbtc-faucet',
-        'Content-Type': 'application/json'
+        headers: {
+          'X-Client-ID': 'rbtc-faucet',
+          'Content-Type': 'application/json'
+        }
       }
     );
     setCaptcha(result.data);
