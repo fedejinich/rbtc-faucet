@@ -17,14 +17,11 @@
   flex-wrap: nowrap !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
-} 
+}
 
 @media (max-width: 768px) {
   .row {
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
-  
 }
-
-

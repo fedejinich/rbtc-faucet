@@ -6,16 +6,17 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ReactCardCarousel from 'react-card-carousel';
 import RskLinkCard from '../components/rsk-link-card';
-import withSizes from 'react-sizes'
+import withSizes from 'react-sizes';
 import Faucet, { FaucetProps } from '../components/faucet';
 import Swal, { SweetAlertOptions } from 'sweetalert2';
 import { apiUrl, newCaptchaUrl } from '../utils/env-util';
 import { DispenseResponse } from '../types/types.d';
+import Fade from 'react-reveal/Fade';
 import '../assets/styles/index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/styles/globals.css';
 
-function App({isMobile}) {
+function App({ isMobile }) {
   //Hooks
   const [captcha, setCaptcha] = useState({ id: '-1', png: '-1' });
   const [dispenseAddress, setDispenseAddress] = useState('');
@@ -101,7 +102,9 @@ function App({isMobile}) {
       </Navbar>
       <div className="app-body">
         <Container className="m-0 p-0 w-100 container-rsk">
-          <DesktopCards faucetProps={faucetPropsDesktop} isMobile={isMobile} />
+          <Fade bottom>
+            <DesktopCards faucetProps={faucetPropsDesktop} isMobile={isMobile} />
+          </Fade>
         </Container>
       </div>
     </div>
@@ -145,31 +148,31 @@ const DesktopCards = (props: DynamicCardsProps) => {
       <Col>
         <Faucet {...props.faucetProps} />
       </Col>
-      {
-        !props.isMobile? (
-          <Col>
-            <Container className="h-100 w-100">
-              <ReactCardCarousel {...reactCardCarouselProps}>
-                <Row>
-                  <RskLinkCard {...devportalLinkCardProps} />
-                </Row>
-                <Row>
-                  <RskLinkCard {...walletsLinkCardProps} />
-                </Row>
-                <Row>
-                  <RskLinkCard {...tutorialLinkCardProps} />
-                </Row>
-              </ReactCardCarousel>
-            </Container>
-          </Col>
-        ): <></>
-      }
+      {!props.isMobile ? (
+        <Col>
+          <Container className="h-100 w-100">
+            <ReactCardCarousel {...reactCardCarouselProps}>
+              <Row>
+                <RskLinkCard {...devportalLinkCardProps} />
+              </Row>
+              <Row>
+                <RskLinkCard {...walletsLinkCardProps} />
+              </Row>
+              <Row>
+                <RskLinkCard {...tutorialLinkCardProps} />
+              </Row>
+            </ReactCardCarousel>
+          </Container>
+        </Col>
+      ) : (
+        <></>
+      )}
     </Row>
   );
 };
 
 const mapSizesToProps = ({ width }) => ({
-  isMobile: width < 768,
-})
+  isMobile: width < 768
+});
 
 export default withSizes(mapSizesToProps)(App);

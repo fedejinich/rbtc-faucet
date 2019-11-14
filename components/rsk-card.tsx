@@ -14,12 +14,17 @@ interface RskCardProps {
 
 const RskCard = (props: RskCardProps) => {
   return (
-    <Card className="p-0 m-0 card rsk-shadow rsk-card rounded-rsk" >
+    <Card className="p-0 m-0 card rsk-shadow rsk-card rounded-rsk">
       <Card.Body className="p-0">
         <Container className="m-0 p-0 w-100 h-100">
           <Row className="w-100 m-0 p-0 rsk-row">
             <Col sm={4} className="p-0">
-              <Container className="w-100 h-100 p-0 vertical-center rounded-rsk-left" style={{ backgroundColor: props.backgroundColor }}>{props.icon}</Container>
+              <Container
+                className="w-100 h-100 p-0 vertical-center rounded-rsk-left"
+                style={{ backgroundColor: props.backgroundColor }}
+              >
+                {props.icon}
+              </Container>
             </Col>
             <Col sm={8} className="p-0 white-background-right-rounded">
               <Container fluid className={props.padding}>
