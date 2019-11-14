@@ -19,7 +19,7 @@ const RSK_TESTNET_CHAIN = 31;
 
 function App() {
   //Hooks
-  const [captcha, setCaptcha] = useState(null);
+  const [captcha, setCaptcha] = useState({ id: '-1', png: '-1' });
   const [dispenseAddress, setDispenseAddress] = useState('');
   const [captchaValue, setCaptchaValue] = useState('');
   const [loading, setLoading] = useState(false);
