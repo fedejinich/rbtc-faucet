@@ -44,3 +44,8 @@
   background-color: 'white';
   width: 70%;
 }
+
+.faucet-captcha-spinner {
+  margin: 23%;
+  color: #2c9dc3;
+}

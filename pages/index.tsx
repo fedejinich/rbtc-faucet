@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/Col';
 import Swal, { SweetAlertOptions } from 'sweetalert2';
 import { DispenseResponse } from '../types/types.d';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../assets/styles/App.css';
+import '../assets/styles/index.css';
 import { apiUrl, newCaptchaUrl } from '../utils/env-util';
 import RskCard from '../components/rsk-card';
 import ReactCardCarousel from 'react-card-carousel';
