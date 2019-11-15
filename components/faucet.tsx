@@ -57,7 +57,7 @@ const Faucet = (props: FaucetProps) => {
           {props.loading ? (
             <Spinner animation="border" role="status" />
           ) : (
-            <Button onClick={props.onDispenseClick} className="faucet-button button-rsk w-100 rounded-rsk">
+            <Button onClick={props.onDispenseClick} className="faucet-button button-rsk  rounded-rsk">
               Get test RBTC
             </Button>
           )}

@@ -40,13 +40,9 @@
   margin-right: 25% !important;
 }
 
-.faucet-icon {
-  content: url('../images/tap-water.png');
-  background-color: 'white';
-  width: 70%;
-}
+
 
 .faucet-captcha-spinner {
-  margin: 23%;
+  margin: 10%;
   color: #2c9dc3;
 }

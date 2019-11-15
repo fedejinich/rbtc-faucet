@@ -95,11 +95,13 @@ function App({ isMobile }) {
 
   return (
     <div className="custom-body">
+      <Fade top>
       <Navbar className="navbar-rsk">
         <Navbar.Brand className="navbar-brand-rsk">
           <img className="logo ml-5" />
         </Navbar.Brand>
       </Navbar>
+      </Fade>
       <div className="app-body">
         <Container className="m-0 p-0 w-100 container-rsk">
           <Fade bottom>

@@ -27,7 +27,7 @@ const RskCard = (props: RskCardProps) => {
               </Container>
             </Col>
             <Col sm={8} className="p-0 white-background-right-rounded">
-              <Container fluid className={props.padding}>
+              <Container className={props.padding}>
                 <div className="font-weight-bold text-left">{props.title}</div>
                 {props.children}
               </Container>
