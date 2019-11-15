@@ -195,7 +195,7 @@ const solveCaptcha = async (captcha: CaptchaSolutionRequest): Promise<CaptchaSol
 
     const res = await axios.post(url, captcha);
     const result: CaptchaSolutionResponse = res.data;
-    
+
     logger.event('captcha solution response ' + JSON.stringify(result));
 
     return result;

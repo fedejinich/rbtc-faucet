@@ -93,33 +93,6 @@ function App({ isMobile }) {
     onCaptchaValueChange: handleCaptchaValueChange,
     onDispenseClick: handleFaucetButtonClick
   };
-
-  return (
-    <div className="custom-body">
-      <Fade top>
-      <Navbar className="navbar-rsk">
-        <Navbar.Brand className="navbar-brand-rsk">
-          <img className="logo ml-5" />
-        </Navbar.Brand>
-      </Navbar>
-      </Fade>
-      <div className="app-body">
-        <Container className="m-0 p-0 w-100 container-rsk">
-          <Fade bottom>
-            <DesktopCards faucetProps={faucetPropsDesktop} isMobile={isMobile} />
-          </Fade>
-        </Container>
-      </div>
-    </div>
-  );
-}
-
-interface DynamicCardsProps {
-  faucetProps: FaucetProps;
-  isMobile: boolean;
-}
-
-const DesktopCards = (props: DynamicCardsProps) => {
   const reactCardCarouselProps = {
     autoplay: true,
     autoplay_speed: 5000
@@ -147,32 +120,47 @@ const DesktopCards = (props: DynamicCardsProps) => {
   };
 
   return (
-    <Row className="w-100">
-      <Col>
-        <Faucet {...props.faucetProps} />
-      </Col>
-      {!props.isMobile ? (
-        <Col>
-          <Container className="h-100 w-100">
-            <ReactCardCarousel {...reactCardCarouselProps}>
-              <Row>
-                <RskLinkCard {...devportalLinkCardProps} />
-              </Row>
-              <Row>
-                <RskLinkCard {...walletsLinkCardProps} />
-              </Row>
-              <Row>
-                <RskLinkCard {...tutorialLinkCardProps} />
-              </Row>
-            </ReactCardCarousel>
-          </Container>
-        </Col>
-      ) : (
-        <></>
-      )}
-    </Row>
+    <div className="custom-body">
+      <Fade top>
+        <Navbar className="navbar-rsk">
+          <Navbar.Brand className="navbar-brand-rsk">
+            <img className="logo ml-5" />
+          </Navbar.Brand>
+        </Navbar>
+      </Fade>
+      <div className="app-body">
+        <Container className="m-0 p-0 w-100 container-rsk">
+          <Fade bottom>
+            <Row className="w-100">
+              <Col>
+                <Faucet {...faucetPropsDesktop} />
+              </Col>
+              {!isMobile ? (
+                <Col>
+                  <Container className="h-100 w-100">
+                    <ReactCardCarousel {...reactCardCarouselProps}>
+                      <Row>
+                        <RskLinkCard {...devportalLinkCardProps} />
+                      </Row>
+                      <Row>
+                        <RskLinkCard {...walletsLinkCardProps} />
+                      </Row>
+                      <Row>
+                        <RskLinkCard {...tutorialLinkCardProps} />
+                      </Row>
+                    </ReactCardCarousel>
+                  </Container>
+                </Col>
+              ) : (
+                <></>
+              )}
+            </Row>
+          </Fade>
+        </Container>
+      </div>
+    </div>
   );
-};
+}
 
 const mapSizesToProps = ({ width }) => ({
   isMobile: width < 768
