@@ -9,8 +9,7 @@
 }
 
 @media (max-width: 768px) {
-  .button-rsk{
-
+  .button-rsk {
     font-size: xx-small !important;
   }
 }
