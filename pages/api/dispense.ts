@@ -188,8 +188,12 @@ const solveCaptcha = async (captcha: CaptchaSolutionRequest): Promise<CaptchaSol
     if (captcha.solution == '') captcha.solution = "doesn't matter";
 
     const url = solveCaptchaUrl() + captcha.id + '/' + captcha.solution;
+
+    logger.event('checking solution against captcha api, POST ' + url);
+
     const res = await axios.post(url, captcha);
     const result: CaptchaSolutionResponse = res.data;
+    
     logger.event('captcha solution response ' + JSON.stringify(result));
 
     return result;
