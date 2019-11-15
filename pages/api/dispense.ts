@@ -167,6 +167,8 @@ const handleDispense = async (req: NextApiRequest, res: NextApiResponse): Promis
             text: 'Something went wrong, please try again in a while',
             resetCaptcha: needsCaptchaReset(captchaSolutionResponse)
           };
+
+          logger.event('Sending response ' + JSON.stringify(data));
           res.status(500).json(JSON.stringify(data)); //500 Internal Server Error
         });
     }
